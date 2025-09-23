@@ -1,6 +1,9 @@
 # 멋쟁이 사자처럼 FrontEnd BootCamp 15기 자바스크립트 프로그래밍 저장소 
 - 예제 테스트(GitHub Page): <https://febc-15.github.io/js/workspace-ins>
 
+## 단원
+### [1. 자바스크립트 기초 문법](docs/01.js_basic.md)
+
 # 개발 환경 구축
 ## 프로그램 설치
 - 본인의 OS에 맞는 버전 다운로드 후 설치
@@ -80,7 +83,7 @@
 ### 터미널 테스트
 - workspace/ch01/ex01-02.js 파일 작성
   ```js
-  console.log(hello('Hello 자바스크립트'));
+  console.log('Hello 자바스크립트');
   ```
 
 - 실행
@@ -93,10 +96,11 @@
 #### 웹 서버 구동
 - VSCode의 터미널로 이동
   + VSCode 하단의 TERMINAL이 보이지 않으면 View > Terminal
-- Live Server 구동
+- 프로젝트 루트에서 Live Server 구동
   ```bash
   npx live-server workspace
   ```
+  + ```Need to install the following packages: live-server@x.x.x Ok to proceed? (y)``` 메세지가 나올 경우 엔터 눌러서 설치
 
 #### 테스트
 - 웹 브라우저로 접속
