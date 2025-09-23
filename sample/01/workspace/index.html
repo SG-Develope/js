@@ -13,7 +13,7 @@
         const openChapter = JSON.parse(localStorage.getItem('openChapter')) || [];
         if ($(this).parent().toggleClass('chapter-open').hasClass('chapter-open')) {
           $(this).children('button').text('예제목록 접기');
-          openChapter.push($(this).parent().index());
+          openChapter.push($(this).parent().index());dfsdef
         }else{
           $(this).children('button').text('예제목록 펼치기');
           openChapter.splice(openChapter.indexOf($(this).parent().index()), 1);
