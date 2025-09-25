@@ -23,7 +23,7 @@ if (score != null && typeof score === 'number') {
     if (dgradeRange) grade = 'D';
     if (fgradeRange) grade = 'F';
 
-    console.log(`${score}점 : ${grade} 학점 입니다.`); // 79: C학점
+    console.log(`${score}점 : ${grade} 학점 입니다.`);
 } else {
     console.log("score에 0 ~ 100 까지 숫자를 입력해주세요"); // 예외처리
 }
