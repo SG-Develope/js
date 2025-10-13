@@ -3,6 +3,7 @@
 
 ## 목차
 ### [1. 자바스크립트 기초 문법](docs/01.js_basic.md)
+### [2. 자바스크립트 함수](docs/02.js_function.md)
 
 # 수업 진도
 
@@ -154,7 +155,295 @@
   + 💻 [01-28 유사 배열 객체](workspace-ins/ch01/ex01-28.js)
 </details>
 
+<details>
+<summary><h3>8일차(2025.10.01 수)</h3></summary>
+
+#### 오전(3시간)
+- 📜 [15. 참조 타입(Array, 배열)](docs/01.js_basic.md#15-참조-타입array-배열)
+  + 💻 [01-29 2차원 배열](workspace-ins/ch01/ex01-29.js)
+- 📜 [16. 참조 타입(Function, 함수)](docs/01.js_basic.md#16-참조-타입function-함수)
+  + 💻 [01-30 기본 함수](workspace-ins/ch01/ex01-30.js)
+  + 💻 [01-31 매개변수를 가진 함수](workspace-ins/ch01/ex01-31.js)
+
+#### 오후(3시간)
+- 📜 [16. 참조 타입(Function, 함수)](docs/01.js_basic.md#16-참조-타입function-함수)
+  + 💻 [01-32 매개변수를 가진 함수 - 도어락](workspace-ins/ch01/ex01-32.js)
+  + 💻 [01-33 반환값이 있는 함수](workspace-ins/ch01/ex01-33.js)
+  + 💻 [01-34 반환값이 있는 함수 - 토스터](workspace-ins/ch01/ex01-34.js)
+- 📜 [17. 참조 타입의 특징](docs/01.js_basic.md#17-참조-타입의-특징)
 </details>
+
+<details>
+<summary><h3>9일차(2025.10.02 목)</h3></summary>
+
+#### 오전(3시간)
+- 📜 [17. 참조 타입의 특징](docs/01.js_basic.md#17-참조-타입의-특징)
+  + 💻 [01-37 Call by Value와 Call by Reference 차이](workspace-ins/ch01/ex01-37.js)
+- 📜 [18. 변수의 유효범위(scope)](docs/01.js_basic.md#18-변수의-유효범위scope)
+  + 💻 [01-38 전역 변수와 지역 변수](workspace-ins/ch01/ex01-38.js)
+- 📜 [19 ES6 - 변수 선언문](docs/01.js_basic.md#19-es6---변수-선언문)
+  + 💻 [01-39 변수 선언문 var, let, const](workspace-ins/ch01/ex01-39.js)
+
+#### 오후(3시간)
+- 📜 [20 ES6 - Template literals](docs/01.js_basic.md#20-es6---template-literals)
+  + 💻 [01-40 Template literals](workspace-ins/ch01/ex01-40.js)
+- 📜 [21 ES6 - 구조 분해 할당(Destructuring assignment)](docs/01.js_basic.md#21-es6---구조-분해-할당destructuring-assignment)
+  + 💻 [01-41 구조 분해 할당(Destructuring assignment)](workspace-ins/ch01/ex01-41.js)
+- 📜 [22 ES6 - 기본값 매개변수(Default parameters)](docs/01.js_basic.md#22-es6---기본값-매개변수default-parameters)
+  + 💻 [01-42 기본값 매개변수(Default parameters)](workspace-ins/ch01/ex01-42.js)
+- 📜 [23 ES6 - 나머지 매개변수(Rest parameters)](docs/01.js_basic.md#23-es6---나머지-매개변수rest-parameters)
+  + 💻 [01-43 나머지 매개변수(Rest parameters)](workspace-ins/ch01/ex01-43.js)
+- 📜 [24 ES6 - 전개 구문(Spread syntax)](docs/01.js_basic.md#24-es6---전개-구문spread-syntax)
+  + 💻 [01-44 전개 구문(Spread syntax)](workspace-ins/ch01/ex01-44.js)
+
+#### 추석 연휴에 할 일
+- 웹 프로그래밍 튜토리얼 학습(복습) - 자바스크립트
+  + [1 기본 개념과 동작 원리 이해의 중요성](https://poiemaweb.com/coding)
+  + [2 자바스크립트란?](https://poiemaweb.com/js-introduction)
+  + [3 자바스크립트 개발 환경과 실행 방법](https://poiemaweb.com/js-hello-world)
+  + [4 브라우저 동작 원리](https://poiemaweb.com/js-browser)
+  + [5 자바스크립트의 기본 문법](https://poiemaweb.com/js-syntax-basics)
+  + [6 데이터 타입과 변수](https://poiemaweb.com/js-data-type-variable)
+  + [7 연산자](https://poiemaweb.com/js-operator)
+  + [8 제어문](https://poiemaweb.com/js-control-flow)
+  + [9 타입 변환과 단축 평가](https://poiemaweb.com/js-type-coercion)
+  + [10 객체](https://poiemaweb.com/js-object)
+  + [11 객체와 변경불가성(Immutability)](https://poiemaweb.com/js-immutability)
+  + [12 함수](https://poiemaweb.com/js-function)
+  + [15 스코프](https://poiemaweb.com/js-scope)
+  + [27 배열](https://poiemaweb.com/js-array)
+  + [28 자바스크립트 배열은 배열이 아니다](https://poiemaweb.com/js-array-is-not-arrray)
+
+- 웹 프로그래밍 튜토리얼 학습(복습) - ECMAScript6
+  + [1 let, const와 블록 레벨 스코프](https://poiemaweb.com/es6-block-scope)
+  + [2 템플릿 리터럴](https://poiemaweb.com/es6-template-literals)
+  + [4 매개변수 기본값, Rest 파라미터, Spread 문법, Rest/Spread 프로퍼티](https://poiemaweb.com/es6-extended-parameter-handling)
+  + [6 디스트럭처링](https://poiemaweb.com/es6-destructuring)
+
+- 웹 프로그래밍 튜토리얼 학습(예습) - 자바스크립트
+  + [17 함수 호출 방식에 의해 결정되는 this](https://poiemaweb.com/js-this)
+
+</details>
+</details>
+
+<details>
+<summary><h2>3주차 - 5일, 2025.10.13(월) ~ 2025.10.17(금)</h2></summary>
+
+<details>
+<summary><h3>10일차(2025.10.13 월)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+<details>
+<summary><h3>11일차(2025.10.14 화)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+<details>
+<summary><h3>12일차(2025.10.15 수)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+<details>
+<summary><h3>13일차(2025.10.16 목)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+<details>
+<summary><h3>14일차(2025.10.17 금)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+</details>
+
+<details>
+<summary><h2>4주차 - 4일, 2025.10.20(월) ~ 2025.10.23(목)</h2></summary>
+
+<details>
+<summary><h3>15일차(2025.10.20 월)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+<details>
+<summary><h3>16일차(2025.10.21 화)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+<details>
+<summary><h3>17일차(2025.10.22 수)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+<details>
+<summary><h3>18일차(2025.10.23 목)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+</details>
+
+<details>
+<summary><h2>5주차 - 5일, 2025.10.27(월) ~ 2025.10.31(금)</h2></summary>
+
+<details>
+<summary><h3>19일차(2025.10.27 월)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+<details>
+<summary><h3>20일차(2025.10.28 화)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+<details>
+<summary><h3>21일차(2025.10.29 수)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+<details>
+<summary><h3>22일차(2025.10.30 목)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+<details>
+<summary><h3>23일차(2025.10.31 금)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+</details>
+
+<details>
+<summary><h2>6주차 - 4일, 2025.11.03(월) ~ 2025.11.06(목)</h2></summary>
+
+<details>
+<summary><h3>24일차(2025.11.03 월)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+<details>
+<summary><h3>25일차(2025.11.04 화)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+<details>
+<summary><h3>26일차(2025.11.05 수)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+<details>
+<summary><h3>27일차(2025.11.06 목)</h3></summary>
+
+#### 오전(3시간)
+
+
+#### 오후(3시간)
+
+
+</details>
+
+</details>
+
 
 # 개발 환경 구축
 ## 프로그램 설치
