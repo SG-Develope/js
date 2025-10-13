@@ -2,8 +2,10 @@
 배열의 모든 요소 읽기 1 - for 루프, for...of, for...in
 */
 
-const arr = [10, 20, 30];
+const arr = [10, { name: "배열핑" }, 30];
 arr.name = "배열핑";
+
+console.log("배열은 : ", arr);
 
 // 배열의 모든 요소 출력(for)
 console.log("for");
