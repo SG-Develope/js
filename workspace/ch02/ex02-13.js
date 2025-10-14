@@ -6,7 +6,12 @@
 */
 
 function fn(n1, n2){
-  console.log(n1, n2);
+  console.log(n1.toFixed(2), n2.toFixed(1));
 }
 
-
+fn(19.1284, 20.343534);
+fn();
+fn(10);
+fn(10, 20);
+fn(10, 20, 30);
+fn(10, 20 , 30,234534,53,54,345,34,53,45,34);

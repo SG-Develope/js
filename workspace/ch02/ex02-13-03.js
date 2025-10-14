@@ -10,3 +10,19 @@
 */
 
 
+function fn(n1=0,n2=0,...nums) {
+  let sum = n1 + n2;
+
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i];
+  }
+
+  console.log(sum);
+}
+
+fn(19.1284, 20.343534);
+fn();
+fn(10);
+fn(10, 20);
+fn(10, 20, 30);
+fn(10, 20, 30, 234534, 53, 54, 345, 34, 53, 45, 34);
