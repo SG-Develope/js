@@ -19,6 +19,9 @@ function printArr(arr) {
   }
 }
 
+// printArr([10, 20]); // 함수 호출
+// printArr([30, 40]); // 함수 호출
+
 // 진짜 배열
 const colorArr = [ 'orange', 'yellow', 'green' ];
 colorArr.push('black');
@@ -27,31 +30,27 @@ printArr(colorArr);
 console.log(colorArr);
 
 // 유사 배열 객체
-const arr = {
+const colorObj = {
   length: 3,
   0: 'orange',
   1: 'yellow',
   2: 'green',
   push: function(color){
-    this[this.length] = color;
-    this.length++;
+    colorObj[colorObj.length] = color;
+    colorObj.length++;
   }
 };
 
-arr.push('black'); // this = arr
-arr.push('white'); // this = arr
-console.log(arr);
-printArr(arr);
+// colorObj[3] = 'black';
+// colorObj.length++;
 
+// colorObj[colorObj.length] = 'white';
+// colorObj.length++;
 
-const arr2 = {
-  length: 3,
-  0: 'orange',
-  1: 'yellow',
-  2: 'green',
-  push: function(color){
-    this[this.length] = color;
-    this.length++;
-  }
-};
-printArr(arr2);
+colorObj.push('black');
+colorObj.push('white');
+console.log(colorObj);
+printArr(colorObj);
+
+// string은 유사 배열 객체
+printArr('hello');
