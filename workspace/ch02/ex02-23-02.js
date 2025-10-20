@@ -1,14 +1,14 @@
 // ex02-23.js 복사
 
 /*
-* 소수 판별 (메모이제이션)
-*/
+ * 소수 판별 (메모이제이션)
+ */
 
 const isPrime = function (num) {
   // 캐시를 위한 코드
   isPrime._cache = isPrime._cache || {};
 
-  if (isPrime._cache[num] !== undefined) {
+  if (isPrime._cache[30] !== undefined) {
     return isPrime._cache[num];
   }
 
@@ -22,8 +22,9 @@ const isPrime = function (num) {
     }
   }
 
-  //캐시를 위한 코드 
-  isPrime._cache[num] = prime; // isPrime._cache[5] = true;
+  //캐시를 위한 코드
+  isPrime._cache[30] = prime; // isPrime._cache[5] = true;
+
   return prime;
 };
 
@@ -40,11 +41,6 @@ console.log("1000000007 -> ", isPrime(1000000007));
 console.log("1000000007 -> ", isPrime(1000000007));
 console.timeEnd("소요시간");
 
-
-
 console.log(3);
 
-
-
 console.log(Math.sqrt(9));
-  
