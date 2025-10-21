@@ -45,6 +45,14 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // 네번째 버튼 누르면 첫번째 마트 항목 삭제(과제)
 
+  const btn4 = this.document.querySelectorAll("button");
+  console.log("버튼수",btn4);
+  btn4[3].addEventListener("click", () => {
+    const target = this.document.querySelector(".list");
+    target.firstElementChild.remove();
+  });
+
+
   // 다섯번째 버튼 우르면 첫번째 영화 항목 삭제(과제)
 
   function addMilk() {
