@@ -44,16 +44,33 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 
   // 네번째 버튼 누르면 첫번째 마트 항목 삭제(과제)
-
   const btn4 = this.document.querySelectorAll("button");
-  console.log("버튼수",btn4);
+  //ALL은 여러 요소 반환 -> 유사배열객체 반환
   btn4[3].addEventListener("click", () => {
-    const target = this.document.querySelector(".list");
-    target.firstElementChild.remove();
+    const target = this.document.querySelector("#buy-list");
+    target.firstElementChild?.remove();
   });
-
-
+  
+  
   // 다섯번째 버튼 우르면 첫번째 영화 항목 삭제(과제)
+  const btn5 = this.document.querySelector("div > button:nth-child(5)");
+  console.log("btn5", btn5);
+  // 단일 객체만 허용, 함수 재사용 불가능 -> 비추
+  btn5.onclick= () => {
+    const target = this.document.querySelector("#movies");
+    target.children[0]?.remove();
+  }; 
+
+
+  
+
+
+
+
+
+
+
+
 
   function addMilk() {
     const newLi = document.createElement("li");
