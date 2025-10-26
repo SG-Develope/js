@@ -7,7 +7,7 @@ const todoList = [
   {
     id: 4,
     title: "React 공부",
-    done: true,
+    done: false,
   },
   {
     id: 3,
@@ -26,189 +26,159 @@ const todoList = [
   },
 ];
 
-let no = todoList.length;
+const tableList = document.querySelector(".todolist tbody");
+const todoInput = document.querySelector(".todoinput input");
+const addBtn = document.querySelector(".todoinput button");
+const delBtn = document.querySelector(".delbtn");
+const checkAllbtn = document.querySelector("thead input");
 
+// 목록표출
+todoList.forEach((item) => {
+  tableList.appendChild(createTodoRow(item));
+});
 
-function showList() {
+// Todo list 추가,삭제,enter 버튼 이벤트 등록
+addBtn.addEventListener("click", createTodoListItem);
+delBtn.addEventListener("click", deleteTodoListItem);
+todoInput.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") createTodoListItem();
+});
 
-  const todoListElem = todoList.map((item) => {
-    return getTodoItemElem(item);
-  });
-  console.log("todo", todoListElem);
-  const todoListUl = document.querySelector(".todolist");
-  console.log("testtest", todoListUl);
-
-  todoListElem.forEach((itemLi) => {
-    todoListUl.appendChild(itemLi);
-  });
-}
-
-/**
- * Todo 아이템 객체 전달받아 화면에 표현하는 li 요소를 생성하는 함수
- * @param {Object} item  Todo 아이템 객체 {id: number, title: string, done: boolean}
- * @returns {HTMLLiElement} 생성된 Todo 아이템의 DOM 요소
- */
-function getTodoItemElem(item) {
-  // item -> {}
-  const liElem = document.createElement("li");
-
-  //<span>
-  const noElem = document.createElement("span");
-  //<span>
-  const titleElem = document.createElement("span");
-
-  //<s>
-  const sElem = document.createElement("span");
-
-  //<button>
-  const deleteElem = document.createElement("button");
-
-  // 2
-  const noTxt = document.createTextNode(item.id);
-  // 샘플 2
-  const titleTxt = document.createTextNode(item.title);
-  // 삭제
-  const deleteTxt = document.createTextNode("삭제");
-
-  // <span>2</span>
-  noElem.appendChild(noTxt);
-
-
-  //<span><s>샘플2</s></span>
-  titleElem.appendChild(titleTxt);
-
-  //<button type="button">삭제</button>
-  deleteElem.setAttribute("type", "button");
-  deleteElem.appendChild(deleteTxt);
-
-  // <li data-no="2"></li>
-  liElem.setAttribute("data-no", item.id);
-  liElem.setAttribute("data-done", item.done);
-
-
-  // 취소선 초기 세팅
-   if(item.done) {
-    const sElem = document.createElement('s');
-    sElem.appendChild(titleElem.firstChild);
-    titleElem.appendChild(sElem);
-  }
-
-
-  // 삭제 이벤트 추가
-liElem.addEventListener('click', function(event) {
-  //this 이벤트가 발생한 요소
-  const parentLi =event.target.closest('li');
-  console.log(parentLi);
-  const no = parentLi.getAttribute('data-no');
-  toggleDone(no);
-})
-
-
-deleteElem.addEventListener('click', function() {
-  //this 이벤트가 발생한 요소
-  const parentLi = this.parentNode;
-  const no = parentLi.getAttribute('data-no');
-  removeItem(no);
-})
-  
-
-
-  liElem.appendChild(noElem);
-  liElem.appendChild(titleElem);
-  liElem.appendChild(deleteElem);
-
-  /* 
-     <li data-no="2">
-       <span>2</span>
-       <span>
-         <s>샘플2</s>
-       </span>
-       <button type="button">삭제</button>
-     </li>; */
-  return liElem;
-}
+checkAllbtn.addEventListener("change", checkboxAll);
 
 /**
- * 추가 버튼 클릭 시 실행되는 이벤트 핸들러
- * 입력창의 값을 가져와 새로운 Todo아이템을 추가
- */
-function add() {
-  const inputElem = document.querySelector(".todoinput > input");
-  console.log(inputElem.value); //HTML 표준 속성은 DOM 객체의 동일한 속성으로 접근 가능
-  if (inputElem.value.trim() !== "") {
-    addItem(inputElem.value.trim());
-    inputElem.value = "";
-    inputElem.focus();
-  }
-}
-
-
-
-/**
- * 새로운 Todo 아이템을 목록에 추가하는 함수
+ * 요소생성함수
+ * @param {Number} id
  * @param {string} title
+ * @param {boolean} done
+ * @returns
  */
-function addItem(title) {
-  const todoListUl = document.querySelector(".todolist");
-  const item = {
-    id: ++no,
-    title,
-    done: false,
-  };
 
-  const todoLi = getTodoItemElem(item);
-  todoListUl.insertBefore(todoLi, todoListUl.firstElementChild);
-}
+//목록표출함수
+function createTodoRow({ id, title, done = false }) {
+  const tr = document.createElement("tr");
+  tr.dataset.no = id;
+  tr.dataset.done = done;
 
-/**
- * 입력창에서 키보드 입력 시 실행되는 이벤트 핸들러
- * Enter 키 입력 시 추가 기능을 실행
- * @param {keyboardEvent} event - 키보드 이벤트 객체
- */
-function handleKeyup(event) {
-  if (event.key === "Enter") add();
-}
+  //선택상자
+  const tdCheck = document.createElement("td");
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.checked = done;
+  checkbox.dataset.id = id;
+  tdCheck.appendChild(checkbox);
 
+  checkbox.addEventListener("change", updateCheckAll);
 
-/**
- * Todo 아이템 하나를 삭제하는 함수
- * @param {number} no - 삭제할 Todo 아이템의 번호(id);
- */
-function removeItem(no) {
-  const targetLi = document.querySelector(`.todolist > li[data-no="${no}"]`);
-  targetLi?.remove();
-}
+  //시퀀스넘버
+  const tdId = document.createElement("td");
+  tdId.textContent = id;
 
-/**
- * Todo 아이템의 완료/미완료 상태를 토글하는 함수
- * @param {number} no - 토글할 Todo 아이템의 번호(id);
-*/
-function toggleDone(no) {
-  console.log(no);
-  const targetLi = document.querySelector(`.todolist > li[data-no="${no}"]`);
-  const isDone = (targetLi.getAttribute('data-done') === 'true');
-  const titleEl = targetLi.querySelector('span:last-of-type');
+  //Todo목록
+  const tdTitle = document.createElement("td");
+  tdTitle.textContent = title;
+  tdTitle.classList.toggle("done", done);
 
-  if(!isDone) {
-    const sElem = document.createElement('s');
-    sElem.appendChild(titleEl.firstChild);
-    titleEl.appendChild(sElem);
-  } else {
-    const sElem = titleEl.querySelector('s');
-    if (sElem) {
-      titleEl.appendChild(sElem.firstChild); // 텍스트 노드 꺼내기
-      sElem.remove(); // <s> 태그 제거
-    }
-  }
+  tdTitle.addEventListener("click", (e) => {
+    tdTitle.classList.toggle("done");
+
   
-  targetLi.setAttribute('data-done',!(isDone));
+    //진행상황 텍스트 수정
+    const isDone = tdTitle.classList.contains("done");
+    tdStatus.textContent = isDone ? "완료" : "미완료";
+
+    // TodoList 값(done) 변경
+    const tr = e.target.closest("tr"); // 가장 가까운 행
+    const id = Number(tr.dataset.no); // 데이터 번호 찾기
+
+    const target = todoList.find((item) => item.id === id);
+  if (target) {
+    target.done = isDone; 
+  }
+  tr.dataset.done = isDone;
+
+  });
+
+
+  
+  //진행상황
+  const tdStatus = document.createElement("td");
+  tdStatus.textContent = done ? "완료" : "미완료";
+
+  tr.append(tdCheck, tdId, tdTitle, tdStatus);
+
+  return tr;
 }
 
+/**
+ * //요소선택삭제
+ * @param {Array} delList
+ */
+function deleteTodoListItem() {
+  const checkedElems = document.querySelectorAll(
+    "tbody input[type='checkbox']:checked"
+  );
 
+  if (checkedElems.length === 0) return alert("삭제항목을 선택하세요");
 
-// '추가' 버튼 클릭 시
-document.querySelector(".todoinput > button").addEventListener("click", add);
+  checkedElems.forEach((checkbox) => {
+    const id = Number(checkbox.dataset.id);
 
-// input 요소에 키보드 입력
-document.querySelector('.todoinput > input').addEventListener('keyup', handleKeyup)
-showList();
+    //todoList 목록 삭제
+    const index = todoList.findIndex((item) => item.id === id);
+    if (index > -1) todoList.splice(index, 1);
+
+    // 테이블 행 삭제
+    checkbox.closest("tr").remove();
+  });
+  resetAllCheckboxes();
+}
+
+// row추가함수
+function createTodoListItem() {
+  const title = todoInput.value.trim();
+  if (!title) return alert("목록을 입력하세요!");
+
+  //시퀀스 넘버 추출
+  const nextId = todoList.length
+    ? Math.max(...todoList.map((num) => num.id)) + 1
+    : 1;
+
+  const newItem = { id: nextId, title: title, done: false };
+  tableList.appendChild(createTodoRow(newItem));
+  const newTodoElement = { id: nextId, title: title, done: false };
+
+  //추가된 Todo요소 list에 적용
+  todoList.push(newTodoElement);
+
+  todoInput.value = "";
+
+  // 전체선택 체크박스 초기화
+  const checkedAllbtn = document.querySelector("input[type='checkbox']");
+  if (checkedAllbtn) checkedAllbtn.checked = false;
+
+  resetAllCheckboxes();
+}
+
+// 전체선택
+function checkboxAll(e) {
+  const isChecked = e.target.checked;
+  tableList
+    .querySelectorAll("input[type='checkbox']")
+    .forEach((cb) => (cb.checked = isChecked));
+}
+
+//추가 및 삭제버튼 클릭 시 체크박스 상태 reset
+function resetAllCheckboxes() {
+  tableList
+    .querySelectorAll("input[type='checkbox']")
+    .forEach((cb) => (cb.checked = false));
+  if (checkAllbtn) checkAllbtn.checked = false;
+}
+
+//body checkbox 전체 요소 체크확인
+function updateCheckAll() {
+  const allCheckboxes = tableList.querySelectorAll("input[type='checkbox']");
+  const allChecked = Array.from(allCheckboxes).every((cb) => cb.checked);
+  checkAllbtn.checked = allChecked;
+}

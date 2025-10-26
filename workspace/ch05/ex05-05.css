@@ -1,0 +1,111 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+
+  h1 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    text-align: center;
+  }
+}
+
+#todo {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  --todoElem-inline-size : 60%;
+
+
+  .todoElement {
+    inline-size: 60%;
+    max-inline-size: 2000px;
+    padding: 2em;
+    border-radius: 0.5em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+
+    .todoinput {
+      display: flex;
+      gap: 5px;
+      justify-content: end;
+      align-items: center;
+      margin-bottom: 0.8em;
+      /* height: 1.8em; */
+      
+      input,
+      button {
+        box-sizing: border-box;
+        border: 0.3px solid;
+        border-radius: 0.4em;
+      }
+      
+      input {
+        block-size: 26px;
+        inline-size: 30%;
+        padding: 0.3em;
+
+        border: 0.3px solid rgba(0, 0, 0, 0.26);
+        
+      }
+      
+      button {
+        block-size: 26px;
+        inline-size: 75px;
+        
+        background-color: #524bb1;
+        color: #fff;
+
+        &:hover {
+          background-color: rgb(114, 89, 182);
+        }
+      }
+    }
+
+    .table-wrap {
+
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      inline-size: inherit;
+      block-size: 350px;
+      border-radius: 3px;
+
+      .todolist {
+        table-layout: fixed;
+        text-align: center;
+        inline-size: 100%;
+
+        border-collapse: collapse;
+
+        tbody {
+          max-height: calc(5 * 40px);
+        }
+
+        tr,
+        td,
+        th,
+        caption {
+          border: 1px solid black;
+          padding: 10px;
+          overflow: hidden;
+          font-weight: normal;
+        }
+
+        input[type="checkbox"] {
+          /* appearance: none;  */
+          width: 15px;
+          height: 15px;
+          background-color: red;
+        }
+      }
+    }
+  }
+}
+
+.done {
+  text-decoration: line-through;
+}
