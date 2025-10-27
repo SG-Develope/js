@@ -1,4 +1,4 @@
-const todoList = [
+let todoList = [
   {
     id: 1,
     title: "JavaScript 공부",
@@ -32,8 +32,34 @@ const addBtn = document.querySelector(".todoinput button");
 const delBtn = document.querySelector(".delbtn");
 const checkAllbtn = document.querySelector("thead input");
 
+
+
+//localStorage에서 할일 목록 조회
+//없을 경우 기본값(todoList)사용
+function getTodoList() {
+  let localTodoList = localStorage.getItem('todoList');
+  if(localTodoList === null) {
+    localTodoList = todoList;
+    localStorage.setItem('todoList', JSON.stringify(localTodoList));
+  } else {
+    localTodoList = JSON.parse(localTodoList);
+  }
+  return localTodoList;
+}
+
+//로컬스토리지 TodoList 갱신
+function saveTodoList() {
+  localStorage.setItem('todoList', JSON.stringify(todoList));
+}
+
+//스토리지 추가항목
+todoList = getTodoList();
+
+
+
 // 목록표출
 todoList.forEach((item) => {
+
   tableList.appendChild(createTodoRow(item));
 });
 
@@ -94,6 +120,8 @@ function createTodoRow({ id, title, done = false }) {
     const target = todoList.find((item) => item.id === id);
   if (target) {
     target.done = isDone; 
+    //로컬스토리지 수정
+    saveTodoList();
   }
   tr.dataset.done = isDone;
 
@@ -131,6 +159,10 @@ function deleteTodoListItem() {
     // 테이블 행 삭제
     checkbox.closest("tr").remove();
   });
+
+  //삭제요소 로컬스토리지 반영
+    saveTodoList();
+
   resetAllCheckboxes();
 }
 
@@ -156,6 +188,9 @@ function createTodoListItem() {
   // 전체선택 체크박스 초기화
   const checkedAllbtn = document.querySelector("input[type='checkbox']");
   if (checkedAllbtn) checkedAllbtn.checked = false;
+
+  //로컬스토리지에 반영
+    saveTodoList();
 
   resetAllCheckboxes();
 }
