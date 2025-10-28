@@ -47,13 +47,14 @@ function getTodoList() {
   return localTodoList;
 }
 
+//스토리지 추가항목
+todoList = getTodoList();
+
 //로컬스토리지 TodoList 갱신
 function saveTodoList() {
   localStorage.setItem('todoList', JSON.stringify(todoList));
 }
 
-//스토리지 추가항목
-todoList = getTodoList();
 
 
 
@@ -118,10 +119,12 @@ function createTodoRow({ id, title, done = false }) {
     const id = Number(tr.dataset.no); // 데이터 번호 찾기
 
     const target = todoList.find((item) => item.id === id);
+    console.log(target);
   if (target) {
     target.done = isDone; 
-    //로컬스토리지 수정
     saveTodoList();
+
+    //로컬스토리지 수정
   }
   tr.dataset.done = isDone;
 
