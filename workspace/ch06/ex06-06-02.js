@@ -14,4 +14,4 @@
     warnMessage('bye');
     warnMessage(200);
 })();
-// export {};
+export {};
