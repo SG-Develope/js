@@ -1,6 +1,5 @@
-"use strict";
 // // 함수에 타입 지정
-Object.defineProperty(exports, "__esModule", { value: true });
+// export {};
 // (()=>{
 //   function getCount(count) {
 //     return 'Count: ' + count;
