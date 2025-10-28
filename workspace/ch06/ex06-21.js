@@ -1,6 +1,5 @@
-"use strict";
 // // 함수의 타입 추론
-Object.defineProperty(exports, "__esModule", { value: true });
+export {};
 // (()=>{
 //   // 매개변수의 타입을 지정하지 않으면 num은 암묵적으로 any 타입이 됨
 //   // tsconfig.json에서 noImplicitAny: true로 설정하면 암묵적 any 타입에 대해서 에러 발생

@@ -1,6 +1,5 @@
-"use strict";
 // // echo 함수 - 일반 함수
-Object.defineProperty(exports, "__esModule", { value: true });
+export {};
 // (()=>{
 //   // FIXME string 타입 매개변수를 받고 string 타입을 리턴하는 함수의 타입 지정
 //   function echoString(msg) {

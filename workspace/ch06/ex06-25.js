@@ -1,6 +1,4 @@
-"use strict";
 // 타입 가드 - typeof 연산자, instanceof 연산자
-Object.defineProperty(exports, "__esModule", { value: true });
 (() => {
     console.log(typeof 10);
     console.log(typeof 'hello');
@@ -27,3 +25,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
     // print('hello');
     // print(123.456);
 })();
+export {};

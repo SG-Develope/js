@@ -1,6 +1,4 @@
-"use strict";
 // 리터럴 타입
-Object.defineProperty(exports, "__esModule", { value: true });
 (() => {
     function walk(name, time) {
         console.log(`${time}시간 동안 ${name}과 산책합니다.`);
@@ -17,3 +15,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
     walkWithMyDog('나무', 2);
     walkWithMyDog('이틀', 3); // 타입 에러를 발생 시키고 싶음
 })();
+export {};

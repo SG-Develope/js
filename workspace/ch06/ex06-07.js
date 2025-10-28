@@ -1,5 +1,5 @@
-"use strict";
 // 타입 별칭으로 객체의 타입 선언
-Object.defineProperty(exports, "__esModule", { value: true });
 (() => {
+    const haru = { name: "test", age: 1 };
 })();
+export {};

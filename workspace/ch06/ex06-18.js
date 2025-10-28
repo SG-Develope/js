@@ -1,6 +1,5 @@
-"use strict";
 // // 제네릭 사용처
-Object.defineProperty(exports, "__esModule", { value: true });
+export {};
 // (()=>{
 //   // FIXME 타입 오류가 발생하지 않도록 필요한 곳에 타입을 지정하세요.
 //   // add 메서드로 item을 순차적으로 저장해 두었다가 getAll 메서드로 모두 조회하는 함수

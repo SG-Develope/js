@@ -1,6 +1,5 @@
-"use strict";
 // 드롭다운 리스트 생성 - 타입스크립트
 // ex06-18-02.js 복사
-Object.defineProperty(exports, "__esModule", { value: true });
 (() => {
 })();
+export {};

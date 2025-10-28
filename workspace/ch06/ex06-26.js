@@ -1,6 +1,5 @@
-"use strict";
 // // 타입 가드 - 속성 값으로 타입 체크
-Object.defineProperty(exports, "__esModule", { value: true });
+export {};
 // (()=>{
 //   interface User {
 //     name: string;

@@ -1,6 +1,5 @@
-"use strict";
 // 드롭다운 리스트 생성 - 제네릭 인터페이스와 함수
 // ex06-18-04.ts 복사
-Object.defineProperty(exports, "__esModule", { value: true });
 (() => {
 })();
+export {};

@@ -1,6 +1,4 @@
-"use strict";
 // 객체의 타입 추론
-Object.defineProperty(exports, "__esModule", { value: true });
 (() => {
     // 객체가 초기화 될 때 속성값에 맞춰서 타입 추론
     const todo1 = {
@@ -10,3 +8,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
     };
     const todo2 = {};
 })();
+export {};

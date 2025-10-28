@@ -1,6 +1,5 @@
-"use strict";
 // echo 함수 - 제네릭 함수
 // ex06-17.ts 복사
-Object.defineProperty(exports, "__esModule", { value: true });
 (() => {
 })();
+export {};

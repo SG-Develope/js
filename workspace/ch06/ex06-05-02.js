@@ -1,6 +1,5 @@
-"use strict";
 // // 유니언 타입과 타입 가드
-Object.defineProperty(exports, "__esModule", { value: true });
+export {};
 // (()=>{
 //   // FIXME: print 함수의 타입을 정의하고 msg의 타입에 따라서 결과값 출력
 //   function print(msg) {

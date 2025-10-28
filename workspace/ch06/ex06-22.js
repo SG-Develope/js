@@ -1,6 +1,5 @@
-"use strict";
 // // 타입 단언
-Object.defineProperty(exports, "__esModule", { value: true });
+export {};
 // (()=>{
 //   // number 타입이나 string 타입을 받아서 그대로 리턴하는 함수
 //   // 리턴값은 string | number 타입으로 추론

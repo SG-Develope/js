@@ -1,6 +1,9 @@
-"use strict";
 // 인터페이스로 객체의 타입 선언
 // ex06-07.ts 복사
-Object.defineProperty(exports, "__esModule", { value: true });
 (() => {
+    ;
+    const haru = { name: "haru", age: 3 };
+    const namu = { name: "namu", age: 2 };
+    console.log(haru.age, namu.name.toUpperCase());
 })();
+export {};

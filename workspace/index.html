@@ -8,8 +8,8 @@
   <script src="https://unpkg.com/jquery@3.7.1/dist/jquery.js"></script>
   <script src="https://unpkg.com/lodash@4.17.21/lodash.js"></script>
   <script src="https://unpkg.com/dayjs@1.11.13/dayjs.min.js"></script>
-  <script src="js/mylib.js"></script>
-  <script>
+  <script  type="module"  src="js/mylib.js"></script>
+  <script/javascript>
     $(function(){
       $('.chapter-title').click(function() {
         const openChapter = JSON.parse(localStorage.getItem('openChapter')) || [];
@@ -47,7 +47,7 @@
             console.log('\n\n');
             
             const script = document.createElement("script");
-            // script.type = "module";
+            script.type = "module";
             script.textContent = data;
 
             const scriptResult = document.querySelector('#script-result');
