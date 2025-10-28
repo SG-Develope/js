@@ -1,6 +1,5 @@
-"use strict";
 // // 선택적 파라미터(optional parameter)
-Object.defineProperty(exports, "__esModule", { value: true });
+export {};
 // (()=>{
 //   function user(name, age) {
 //     console.log(name, age);
