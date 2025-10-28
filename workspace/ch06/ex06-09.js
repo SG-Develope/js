@@ -2,8 +2,8 @@
 // ex06-07.ts 복사
 (() => {
     ;
-    const haru = { name: "haru", age: 3 };
-    const namu = { name: "namu", age: 2 };
+    const haru = { name: 'haru', age: 5 };
+    const namu = { name: 'namu', age: 8 };
     console.log(haru.age, namu.name.toUpperCase());
 })();
 export {};
