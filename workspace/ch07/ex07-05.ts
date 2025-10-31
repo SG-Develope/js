@@ -6,12 +6,15 @@
   const haru = { name: '하루', age: 5 };
 
   // JSON 문자열로 변환
+  const strHaru = JSON.stringify(haru);
 
   // JSON 문자열을 객체로 변환
-
+  const objHaru = JSON.parse(strHaru);
   
   console.log(typeof haru, haru);
+  console.log(typeof strHaru, strHaru);
+  console.log(typeof objHaru, objHaru);
 
 })();
-
+s
 
