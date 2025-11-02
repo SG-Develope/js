@@ -16,5 +16,4 @@
   console.log(typeof objHaru, objHaru);
 
 })();
-s
 

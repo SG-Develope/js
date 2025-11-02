@@ -10,5 +10,4 @@
     console.log(typeof strHaru, strHaru);
     console.log(typeof objHaru, objHaru);
 })();
-s;
 export {};
