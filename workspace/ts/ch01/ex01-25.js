@@ -4,40 +4,24 @@
 */
 
 const user = {
-  name: "매직핑",
-  mainJob: "magician",
+  name: '매직핑',
+  mainJob: 'magician',
 };
 
 // 객체의 속성 읽기
-console.log(
-  user.name,
-  user["mainJob"].toUpperCase(),
-  user.subJob?.toUpperCase()
-);
+console.log(user.name, user['mainJob'].toUpperCase(), user.subJob?.toUpperCase());
 
 // 객체의 속성 수정
-user.mainJob = "fairy";
-console.log(
-  user.name,
-  user["mainJob"].toUpperCase(),
-  user.subJob?.toUpperCase()
-);
+user.mainJob = 'fairy';
+console.log(user.name, user['mainJob'].toUpperCase(), user.subJob?.toUpperCase());
 
 // 객체의 속성을 동적으로 생성
-user.subJob = "wizard";
-console.log(
-  user.name,
-  user["mainJob"].toUpperCase(),
-  user.subJob?.toUpperCase()
-);
+user.subJob = 'wizard';
+console.log(user.name, user['mainJob'].toUpperCase(), user.subJob?.toUpperCase());
 
 // 객체의 속성 삭제
 // delete user.mainJob;
-console.log(
-  user.name,
-  user["mainJob"]?.toUpperCase(),
-  user.subJob?.toUpperCase()
-);
+console.log(user.name, user['mainJob']?.toUpperCase(), user.subJob?.toUpperCase());
 
 // 객체의 모든 속성 조회
 // user 객체의 속성 개수만큼 for 문을 반복한다.

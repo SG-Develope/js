@@ -5,20 +5,13 @@
   - function 키워드로 시작하는 함수 정의
 */
 
-
-function add(a, b) {
+// 함수 선언문
+function add(x, y){
   console.log(this);
-     return a + b;
+  const result = x + y;
+  return result;
 }
 
-
-
-// console.log(add(10, 20)); // 30
-
-
-const test = {
-  a: 123
-}
-
-
-console.log(add.call(test,10, 20)); // 30
+console.log(add(10, 20)); // 30, this = window
+console.log(add.call({pingName: '하루핑'}, 10, 20)); // 30, this = {pingName: '하루핑'}
+console.log(add.apply({pingName: '나무핑'}, [10, 20])); // 30, this = {pingName: '나무핑'}

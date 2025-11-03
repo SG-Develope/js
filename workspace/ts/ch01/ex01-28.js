@@ -1,43 +1,56 @@
 /*
 유사 배열 객체
-- lenth 속성을 가지고 있음
+- length 속성을 가지고 있음
 - 0부터 시작하는 인덱스와 동일한 속성을 포함
 - 배열처럼 사용하지만 실체는 객체
 */
 
 /**
- * 전달받은 배열의 몯느 요소를 인덱스와 함께 출력한다.
- * 예시) [10,20] 배여링 전달될 경우
+ * 전달받은 배열의 모든 요소를 인덱스와 함께 출력한다.
+ * 출력 예시) [ 10, 20 ] 배열이 전달될 경우
  * 0 10
  * 1 20
  * @param {*} arr - 배열
-*/
-
-const arr = [10, 20];
-
-
-printerArr(arr);
-
-function printerArr(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    console.log(i, arr[i]);
+ */
+function printArr(arr) {
+  // const arr = [10, 20];
+  for(let i=0; i<arr.length; i++){
+    console.log(i, arr[i]); // arr[0], arr[1], arr[2] ...
   }
 }
 
-// printerArr2(ardfr);
+// printArr([10, 20]); // 함수 호출
+// printArr([30, 40]); // 함수 호출
 
-function printerArr2(arr) {
-  for (const test in arr) {
-    console.log(test, arr[test]);
-    // 배열에는 사용하지않는다 . 순서도 보장안되고 인덱스도 문자열로 반환됌,
-    //배열에 추가된 프로토타입 속성까지 순회할 수 있음 (예상치 못한 동작)
+// 진짜 배열
+const colorArr = [ 'orange', 'yellow', 'green' ];
+colorArr.push('black');
+colorArr.push('white');
+printArr(colorArr);
+console.log(colorArr);
+
+// 유사 배열 객체
+const colorObj = {
+  length: 3,
+  0: 'orange',
+  1: 'yellow',
+  2: 'green',
+  push: function(color){
+    colorObj[colorObj.length] = color;
+    colorObj.length++;
   }
-}
-
-
-const obj = {
-  name: "Alice",
-  greet: () => {
-
-  },
 };
+
+// colorObj[3] = 'black';
+// colorObj.length++;
+
+// colorObj[colorObj.length] = 'white';
+// colorObj.length++;
+
+colorObj.push('black');
+colorObj.push('white');
+console.log(colorObj);
+printArr(colorObj);
+
+// string은 유사 배열 객체
+printArr('hello');

@@ -2,25 +2,49 @@
 전개 구문(Spread syntax)
 */
 
-const state = ['orange', 'yellow', 'green'];
-const newState = [];
-for (let i = 0; i < state.length; i++) {
-  newState[i] = state[i];
-}
+// TODO 전개 구문: React에서 많이 사용
+
+// 배열일 경우
+const state = [ 'orange', 'yellow', 'green', 'black' ];
+
+// 참조 복사
+// const newState = state;
+
+// 객체 복사(얕은 복사)
+// const newState = [];
+// for(let i=0; i<state.length; i++){
+//   newState[i] = state[i];
+// }
+
+// const newState = [ state[0], state[1], state[2], state[3] ];
+
+const newState = [ 'white', ...state ];
+
 console.log(state, newState);
-console.log(state == newState);
+console.log(state === newState);
 
-const a = [1, 2, 3];
-const b = [...a]; // 얕은 복사
+// 객체일 경우
+const state2 = { userName: '전개핑', age: 30 };
 
-b[0] = 100;
+// 참조 복사
+// const newState2 = state2;
 
-console.log(a[0]); // 1 → 바뀌지 않음
-console.log(b[0]); // 1 → 바뀌지 않음
-console.log(a === b); // 1 → 바뀌지 않음
+// 객체 복사(얕은 복사)
+const newState2 = { ...state2, job: 'student' };
+newState2.age += 10;
 
+console.log(state2, newState2);
+console.log(state2 === newState2);
 
-var x = 3;
-console.log(window.x);  // 3 출력됨
+// 함수의 인자값을 전개 구문으로 전달
+function sum(...args){
+ let sum = 0;
+ for(let arg of args){
+  sum += arg;
+ }
+ console.log(sum);
+}
 
-
+const numbers = [10, 20, 30, 40];
+// sum(numbers[0], numbers[1]);
+sum(...numbers);

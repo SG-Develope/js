@@ -8,16 +8,16 @@
 // 합계를 저장할 변수를 0으로 초기화
 var sum = 0;
 
-// for ( let i = 1; i < 11; i++) {
-//   console.log(sum += i);
-// }
-
-const numberList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-for (const num of numberList) {
-  console.log((sum += num));
-}
-
+sum += 1; // sum = sum + 1 = 0 + 1 = 1
+sum += 2; // sum = sum + 2 = 1 + 2 = 3
+sum += 3; // sum = sum + 3 = 3 + 3 = 6
+sum += 4; // sum = sum + 4 = 6 + 4 = 10
+sum += 5; // sum = sum + 5 = 10 + 5 = 15
+sum += 6; // sum = sum + 6 = 15 + 6 = 21
+sum += 7; // sum = sum + 7 = 21 + 7 = 28
+sum += 8; // sum = sum + 8 = 28 + 8 = 36
+sum += 9; // sum = sum + 9 = 36 + 9 = 25
+sum += 10; // sum = sum + 10 = 45 + 10 = 55
 
 // 최종 합계 출력
-// console.log(sum);
+console.log(sum);

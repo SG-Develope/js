@@ -3,18 +3,20 @@
 */
 
 const score = {
-  name: "객체핑",
+  name: '객체핑',
   kor: 90,
   eng: 80,
   math: 75,
-  sum: function () {
+  sum: function(){
     return score.kor + score.eng + score.math;
   },
-  avg: function () {
+  avg: function(){
     // return score.sum() / 3;
-    return Math.round((score.sum() / 3) * 10 ** 2) / 10 ** 2; // 소수 세째 자리에서 반올림 처리
-  },
+    return Math.round((score.sum() / 3) * 10**2) / 10**2; // 소수 세째 자리에서 반올림 처리
+  }
 };
+
+console.log(JSON.stringify(score));
 
 // TODO 반복적인 sum, avg 계산 작업을 줄이기 위한 방법은???
 // score.sum = score.kor + score.eng + score.math;
@@ -24,37 +26,20 @@ const score = {
 // Math.round(81.66666 * 10**2) / 10**2 => Math.round(8166.666) / 10**2 => 8167 / 10**2 => 81.67
 // score.avg = Math.round((score.sum / 3) * 10**2) / 10**2; // 소수 세째 자리에서 반올림 처리
 
-console.log(score.name, "총점:", score.sum());
-console.log(score.name, "평균:", score.avg());
+console.log(score.name, '총점:', score.sum());
+console.log(score.name, '평균:', score.avg());
 
 score.eng += 10;
 // score.sum = score.kor + score.eng + score.math;
 // score.avg = score.sum / 3;
 // score.avg = Math.round((score.sum / 3) * 10**2) / 10**2; // 소수 세째 자리에서 반올림 처리
-console.log(score.name, "총점:", score.sum());
-console.log(score.name, "평균:", score.avg());
+console.log(score.name, '총점:', score.sum());
+console.log(score.name, '평균:', score.avg());
 
 score.math += 10;
 // score.sum = score.kor + score.eng + score.math;
 // score.avg = score.sum / 3;
 // score.avg = Math.round((score.sum / 3) * 10**2) / 10**2; // 소수 세째 자리에서 반올림 처리
 // score.avg = Number((score.sum / 3).toFixed(2)); // 소수 세째 자리에서 반올림 처리
-console.log(score.name, "총점:", score.sum());
-console.log(score.name, "평균:", score.avg());
-
-
-
-var user = {
-  name: "lee",
-  age: 35,
-  job: "teacher",
-  married: true,
-};
-for (var prop in user) {
-  // user 객체의 속성 개수만큼 반복하면서 첫번째 속성명 부터 순차적으로 prop 변수에 저장
-  // name: lee
-  // age: 35
-  // job: 'teacher'
-  // married: true
-  console.log(prop + ": " + user[prop]);
-}
+console.log(score.name, '총점:', score.sum());
+console.log(score.name, '평균:', score.avg());

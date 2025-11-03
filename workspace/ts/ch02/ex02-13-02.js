@@ -7,21 +7,20 @@
   - 배열과 비슷하게 length 속성과 index로 각 인자값에 접근 가능
 */
 
-function fn() {
+function fn(n1, n2){
+  // console.log(n1, n2, arguments);
+  // 모든 인자값의 합계를 출력
   let sum = 0;
 
-  // arguments는 유사 배열이므로, 인덱스로 접근하거나 Array로 변환해서 써야 함
-  for (let i = 0; i < arguments.length; i++) {
+  for(let i=0; i<arguments.length; i++){
     sum += arguments[i];
   }
 
-  console.log(sum);
+  console.log('합계', sum);
 }
 
-fn(19.1284, 20.343534);
+fn(10.1234, 20.678);
 fn();
 fn(10);
-fn(10, 20);
 fn(10, 20, 30);
-fn(10, 20, 30, 234534, 53, 54, 345, 34, 53, 45, 34);
-
+fn(10, 20, 30,234534,53,45,345,34,53,45,34,6456,7,345,345,6345,7);

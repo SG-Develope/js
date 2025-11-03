@@ -6,18 +6,11 @@
   - 함수 선언문만 호이스팅되며, 함수 표현식은 호이스팅되지 않음
 */
 
-//호이스팅
+console.log(add(10, 20));
+
 // 함수 선언문
-function add(x, y) {
+function add(x, y){
   return x + y;
 }
 
-console.log(add(10, 20));
-// 함수 선언문
-function add(x, y) {
-  return x + y;
-}
-
-//실제 코드 실행 단계
-console.log(add(10, 20));
-console.log(add(30, 40))
+console.log(add(30, 40));

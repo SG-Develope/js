@@ -17,10 +17,10 @@ switch(변수){
 // 0으로 나눌 경우 "0으로 나눌 수 없습니다." 출력
 // 잘못된 연산자를 입력할 경우 "잘못된 연산자입니다." 출력
 
-let operator = "+"; // 연산자 변수
-let n1 = 10; // 첫 번째 숫자
-let n2 = 20; // 두 번째 숫자
-let result = null; // 연산 결과
+let operator = '+';  // 연산자 변수
+let n1 = 10;         // 첫 번째 숫자
+let n2 = 20;         // 두 번째 숫자
+let result = null;   // 연산 결과
 
 // if-else if 문을 사용한 사칙연산 구현
 // 출력 예시: 10 + 20 = 30
@@ -38,23 +38,23 @@ let result = null; // 연산 결과
 
 // switch문으로 작성
 switch (operator) {
-  case "+": // operator === '+'
+  case '+': // operator === '+'
     result = n1 + n2;
     break;
-  case "-": // operator === '-'
+  case '-': // operator === '-'
     result = n1 - n2;
     break;
-  case "*": // operator === '*'
+  case '*': // operator === '*'
     result = n1 * n2;
     break;
-  case "/": // operator === '/'
+  case '/': // operator === '/'
     result = n1 / n2;
     break;
   default:
-    console.log("잘못된 연산자");
+    console.log('잘못된 연산자');
 }
-
-if (result != null) {
+  
+if(result != null) {
   console.log(`${n1} + ${n2} = ${result}`);
 }
 
@@ -87,29 +87,30 @@ let day = 7;
 // switch로 작성
 switch (day) {
   case 1:
-    console.log("월요일");
+    console.log('월요일');
     break;
   case 2:
-    console.log("화요일");
+    console.log('화요일');
     break;
   case 3:
-    console.log("수요일");
+    console.log('수요일');
     break;
   case 4:
-    console.log("목요일");
+    console.log('목요일');
     break;
   case 5:
-    console.log("금요일");
+    console.log('금요일');
     break;
   case 6:
-    console.log("토요일");
+    console.log('토요일');
     break;
   case 7:
-    console.log("일요일");
+    console.log('일요일');
     break;
   default:
-    console.log("잘못된 요일");
+    console.log('잘못된 요일');
 }
+
 
 // 1 ~ 12 사이의 월을 받아서 계절을 출력하는 프로그램
 // 봄: 3 ~ 5월, 여름: 6 ~ 8월, 가을: 9 ~ 11월, 겨울: 12 ~ 2월
@@ -136,23 +137,26 @@ switch (month) {
   case 3:
   case 4:
   case 5:
-    console.log("봄");
+    console.log('봄');
     break;
   case 6:
   case 7:
   case 8:
-    console.log("여름");
+    console.log('여름');
     break;
   case 9:
   case 10:
   case 11:
-    console.log("가을");
+    console.log('가을');
     break;
   case 12:
   case 1:
   case 2:
-    console.log("겨울");
+    console.log('겨울');
     break;
   default:
-    console.log("잘못된 월");
+    console.log('잘못된 월');
 }
+
+
+

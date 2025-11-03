@@ -1,36 +1,36 @@
+/*
+if문을 이용하여 학생의 점수에 따라 학점을 계산하고 출력하는 프로그램을 작성합니다.
+*/
 
-// if문을 이용하여 사용자의 로그인 상태와 사용자의 등급을 출력하세요
+// 점수는 0 ~ 100 점 사이의 정수
+const score = 79;
 
+// 학점을 저장하는 변수
+let grade = '';
 
-const isLogin = true;
-const isUser = true;
-const isSeller = false;
-const isAdmin = false;
-
-
-//로그인 상태 출력
-// 로그인 상태/로그아웃 상태
-
-const status = isLogin ? "로그인 상태" : "로그아웃 상태";
-console.log(isLogin);
-// 사용자 유형 출력
-// 구매자/판매자/관리자
-
-
-if (isLogin == true) {
-if (isUser)   console.log("구매자 입니다.");
-if (isSeller) console.log("판매자 입니다.");
-if (isAdmin)  console.log("관리자 입니다.");
+// A: 90점 이상 100점 이하
+if (score >= 90 && score <= 100) {
+  grade = 'A';
 }
 
+// B: 80점 이상 90점 미만
+if (score >= 80 && score < 90) {
+  grade = 'B';
+}
 
-// 로그인 상태와 사용자 유형을 조합해서 출력
-// 사용자 로그인 상태/사용자 로그아웃 상태
-// 판매자 로그인 상태/판매자 로그아웃 상태
-// 관리자 로그인 상태/관리자 로그아웃 상태
+// C: 70점 이상 80점 미만
+if (score >= 70 && score < 80) {
+  grade = 'C';
+}
 
-const loginStatus = isLogin ? "로그인 상태" : "로그아웃 상태";
+// D: 60점 이상 70점 미만
+if (score >= 60 && score < 70) {
+  grade = 'D';
+}
 
-if (isUser)   console.log(`${loginStatus} /구매자 입니다.`);
-if (isSeller) console.log(`${loginStatus} /판매자 입니다.`);
-if (isAdmin)  console.log(`${loginStatus} /관리자 입니다.`);
+// F: 60점 미만
+if (score < 60) {
+  grade = 'F';
+}
+
+console.log(`${score}: ${grade}학점`); // 79: C학점

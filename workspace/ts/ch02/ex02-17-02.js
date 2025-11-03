@@ -5,22 +5,21 @@
   - 임시 변수로 상위 Scope의 this를 참조
 */
 
-var count = 0;
+var count = 0; // window.count = 0
 const myObj = {
   count: 0,
-  visit: function () {
+  visit: function(){
     // 방문자를 한명 증가시킨다.
     this.count++; // this = myObj
     const that = this; // that = myObj
 
-    const visit2 = function () {
+    const visit2 = function(){
       that.count++; // that = myObj
     };
-    visit2();
+    visit2(); // this = window
   },
 };
 
-myObj.visit();
-myObj.visit();
-console.log("방문자수", myObj.count);
-console.log("방문자수2", count);
+myObj.visit(); // this = myObj
+myObj.visit(); // this = myObj
+console.log('방문자수', myObj.count); // 4

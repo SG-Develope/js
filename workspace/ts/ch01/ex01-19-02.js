@@ -1,21 +1,31 @@
+/*
+switch 문을 이용해서 학점을 출력하세요.
+*/
 
+// 0 ~ 100 까지의 정수
 const score = 79;
-const grade = '';
-if (score >= 90 && score <= 100) {
-  grade = "A";
-} else if (score >= 80) {
-  grade = "B";
-} else if (score >= 70) {
-  grade = "C";
-} else if (score >= 60) {
-  grade = "D";
-} else {
-  grade = "F";
+let grade = '';
+
+// 점수에서 10의 자리만 꺼내기
+// 79/10 => 7.9 => parseInt(7.9) => 7
+
+switch (parseInt(score/10)) {
+  case 10:
+  case 9:
+    grade = 'A';
+    break;
+  case 8:
+    grade = 'B';
+    break;
+  case 7:
+    grade = 'C';
+    break;
+  case 6:
+    grade = 'D';
+    break;
+  default:
+    grade = 'F';
+    break;
 }
 
-
-
-switch (score) {
-  case score >= 90 && score <= 100 :  grade: "A";
-    grade : "A";
-};
+console.log(`${score}: ${grade}학점`); // 79: C학점

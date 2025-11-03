@@ -5,7 +5,6 @@
 - 배열처럼 사용하지만 실체는 객체
 */
 
-
 /**
  * 전달받은 배열의 모든 요소를 인덱스와 함께 출력한다.
  * 출력 예시) [ 10, 20 ] 배열이 전달될 경우
@@ -20,7 +19,6 @@ function printArr(arr) {
   }
 }
 
-
 // 진짜 배열
 const colorArr = [ 'orange', 'yellow', 'green' ];
 colorArr.push('black');
@@ -29,7 +27,7 @@ printArr(colorArr);
 console.log(colorArr);
 
 // 유사 배열 객체
-const colorObj = {
+const arr = {
   length: 3,
   0: 'orange',
   1: 'yellow',
@@ -40,10 +38,20 @@ const colorObj = {
   }
 };
 
-colorObj.push('black');
-colorObj.push('white');
-console.log(colorObj);
-printArr(colorObj);
+arr.push('black'); // this = arr
+arr.push('white'); // this = arr
+console.log(arr);
+printArr(arr);
 
-// string은 유사 배열 객체
-printArr('hello');
+
+const arr2 = {
+  length: 3,
+  0: 'orange',
+  1: 'yellow',
+  2: 'green',
+  push: function(color){
+    this[this.length] = color;
+    this.length++;
+  }
+};
+printArr(arr2);

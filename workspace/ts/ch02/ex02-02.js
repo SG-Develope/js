@@ -9,7 +9,7 @@
 
 // 함수는 함수의 인자로 전달될 수 있다.
 function f1(fn){
-  console.log('f1 호출.');
+	console.log('f1 호출.');
   fn();
 };
 

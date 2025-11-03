@@ -13,6 +13,7 @@ if (isLogin) {
 } else {
   console.log("로그아웃 상태");
 }
+
 // 사용자 유형 출력
 if (isUser) {
   console.log("구매자");
@@ -26,3 +27,18 @@ if (isUser) {
 // "구매자 로그인 상태"/구매자 로그아웃 상태
 // 판매자 로그인 상태/판매자 로그아웃 상태
 // 관리자 로그인 상태/관리자 로그아웃 상태
+
+let userType = '구매자';
+let loginState = '로그인';
+
+if (isSeller) {
+  userType = '판매자';
+} else if (isAdmin) {
+  userType = '관리자';
+}
+
+if (!isLogin) {
+  loginState = '로그아웃';
+}
+
+console.log(`${userType} ${loginState} 상태`);

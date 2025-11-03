@@ -7,24 +7,16 @@
 */
 (() => {
   let sum = 0;
-  for (let i = 1; i <= 10; i += 2) {
+  for(let i=1; i<=10; i+=2){
     sum += i;
   }
-  console.log("1 ~ 10까지 홀수 합계", sum); // 25
+  console.log('1 ~ 10까지 홀수 합계', sum); // 25
 })();
 
-(function () {
+(function(){
   let sum = 0;
-  for (let i = 2; i <= 10; i += 2) {
+  for(let i=2; i<=10; i+=2){
     sum += i;
   }
-  console.log("1 ~ 10까지 짝수 합계", sum); // 30
-})();
-
-(function () {
-  let sum = 0;
-  for (let i = 1; i <= 10; i++) {
-    sum += i;
-  }
-  console.log("1 ~ 10까지 걍 더하기", sum); // 30
+  console.log('1 ~ 10까지 짝수 합계', sum); // 30
 })();
