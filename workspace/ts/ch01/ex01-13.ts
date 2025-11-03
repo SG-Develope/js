@@ -20,11 +20,15 @@
   // OR 연산자의 특징
   // 앞의 값이 truthy 라면 앞의 값을 반환
   // 앞의 값이 falsy 라면 뒤의 값을 반환
+  //@ts-ignore
   console.log('hello' || 'world'); // 'hello'
   console.log(90 || 100); // 90
   console.log(0 || 10); // 10
+  //@ts-ignore
   console.log(null || 'guest'); // 'guest'
+  //@ts-ignore
   console.log(undefined || 'guest'); // 'guest'
+  //@ts-ignore
   console.log('' || 'guest'); // 'guest'
   
   // 논리곱(AND)
