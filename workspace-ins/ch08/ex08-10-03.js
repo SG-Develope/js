@@ -56,7 +56,9 @@
             numbers.add(number);
             console.log(numbers.size, '로또 번호', number);
         }
-        return [...numbers].sort();
+        // compare 함수가 음수를 반환하면 a, b 순서를 유지
+        // 양수를 반환하면 a, b 순서를 바꿈
+        return [...numbers].sort((a, b) => a - b);
     }
 })();
 export {};
