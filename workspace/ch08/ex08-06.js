@@ -7,3 +7,12 @@ function test(a, a) {
   console.log(a + a); // 40
 }
 test(10, 20);
+
+
+// "use strict";
+
+// function test(a, a) { // ❌ SyntaxError
+//   console.log(this); // undefined
+//   x = 10; // ❌ ReferenceError
+// }
+// test(10, 20);
