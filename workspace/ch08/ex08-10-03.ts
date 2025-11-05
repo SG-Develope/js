@@ -78,6 +78,6 @@
       numbers.add(number);
       console.log(numbers.size, "로또 번호", number);
     }
-    return [...numbers];
+    return [...numbers].sort((a, b) => a - b);
   }
 })();
