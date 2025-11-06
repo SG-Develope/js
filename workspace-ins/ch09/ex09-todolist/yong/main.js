@@ -1,10 +1,11 @@
 // ex05-05.js 복사
-import axios, { AxiosError } from "axios";
-const API_SERVER = 'https://fesp-api.koyeb.app/todo';
+import { AxiosError } from "axios";
+import { getAxios } from "./utils.js";
+const axiosInstance = getAxios();
 // 할일 목록을 서버에서 조회한 후 화면에 출력
 async function showList() {
     try {
-        const { data } = await axios.get(`${API_SERVER}/todolist`);
+        const { data } = await axiosInstance.get(`/todolist`);
         if (data.ok) {
             const todoList = data.items;
             // Todo 객체를 li 요소로 변환
@@ -17,6 +18,7 @@ async function showList() {
         }
     }
     catch (err) {
+        console.error(err);
         if (err instanceof AxiosError) {
             console.error('에러', err.response?.data.message);
         }
@@ -127,7 +129,7 @@ function add() {
  */
 async function addItem(title) {
     try {
-        await axios.post(`${API_SERVER}/todolist`, { title });
+        await axiosInstance.post(`/todolist`, { title });
         showList();
     }
     catch (err) {
@@ -151,7 +153,7 @@ function handleKeyup(event) {
  */
 async function removeItem(no) {
     try {
-        await axios.delete(`${API_SERVER}/todolist/${no}`);
+        await axiosInstance.delete(`/todolist/${no}`);
         showList();
     }
     catch (err) {
@@ -169,7 +171,7 @@ async function toggleDone(no) {
     const beforeDone = targetLi.dataset.done;
     const isDone = beforeDone === 'true' ? false : true;
     try {
-        await axios.patch(`${API_SERVER}/todolist/${no}`, { done: isDone });
+        await axiosInstance.patch(`/todolist/${no}`, { done: isDone });
         showList();
     }
     catch (err) {

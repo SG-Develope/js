@@ -1,14 +1,15 @@
 // ex05-05.js 복사
 
-import axios, { AxiosError } from "axios";
+import { AxiosError } from "axios";
 import type { TodoCreateReq, TodoDeleteRes, TodoInfoRes, TodoList, TodoListRes } from "./types.js";
+import { getAxios } from "./utils.js";
 
-const API_SERVER = 'https://fesp-api.koyeb.app/todo';
+const axiosInstance = getAxios();
 
 // 할일 목록을 서버에서 조회한 후 화면에 출력
 async function showList(){
   try{
-    const { data } = await axios.get<TodoListRes>(`${API_SERVER}/todolist`);
+    const { data } = await axiosInstance.get<TodoListRes>(`/todolist`);
     if(data.ok){
       const todoList = data.items;
       // Todo 객체를 li 요소로 변환
@@ -21,6 +22,7 @@ async function showList(){
       }
     }
   }catch(err){
+    console.error(err);
     if(err instanceof AxiosError){
       console.error('에러', err.response?.data.message);
     }
@@ -147,7 +149,7 @@ function add(){
  */
 async function addItem(title: string){
   try{
-    await axios.post<TodoInfoRes>(`${API_SERVER}/todolist`, { title });
+    await axiosInstance.post<TodoInfoRes>(`/todolist`, { title });
     showList();
   }catch(err){
     if(err instanceof AxiosError){
@@ -171,7 +173,7 @@ function handleKeyup(event: KeyboardEvent){
  */
 async function removeItem(no: number){
   try{
-    await axios.delete<TodoDeleteRes>(`${API_SERVER}/todolist/${no}`);
+    await axiosInstance.delete<TodoDeleteRes>(`/todolist/${no}`);
     showList();
   }catch(err){
     if(err instanceof AxiosError){
@@ -190,7 +192,7 @@ async function toggleDone(no: number){
   const isDone = beforeDone === 'true' ? false : true;
 
   try{
-    await axios.patch<TodoInfoRes>(`${API_SERVER}/todolist/${no}`, { done: isDone });
+    await axiosInstance.patch<TodoInfoRes>(`/todolist/${no}`, { done: isDone });
     showList();
   }catch(err){
     if(err instanceof AxiosError){
