@@ -14,7 +14,7 @@ export interface TodoInfo {
 /**
  * Todo 목록 항목 (목록 조회 시 content 제외)
  */
-export type TodoList = Omit<TodoInfo, 'content'>;
+export type TodoList = Omit<TodoInfo, "content">;
 
 /**
  * Todo 생성 요청 (POST /todo/todolist)
@@ -48,7 +48,7 @@ export interface ApiError {
  * 성공: { ok: 1, items: [...], pagination: {...} }
  * 실패: { ok: 0, error: { message: "에러 메시지" } }
  */
-export type TodoListRes = 
+export type TodoListRes =
   | {
       ok: 1;
       items: TodoList[];
@@ -66,7 +66,7 @@ export type TodoListRes =
  * 성공: { ok: 1, item: {...} }
  * 실패: { ok: 0, error: { message: "에러 메시지" } }
  */
-export type TodoInfoRes = 
+export type TodoInfoRes =
   | {
       ok: 1;
       item: TodoInfo;
@@ -78,6 +78,4 @@ export type TodoInfoRes =
  * 성공: { ok: 1 }
  * 실패: { ok: 0, error: { message: "에러 메시지" } }
  */
-export type TodoDeleteRes = 
-  | { ok: 1 }
-  | ApiError;
+export type TodoDeleteRes = { ok: 1 } | ApiError;
